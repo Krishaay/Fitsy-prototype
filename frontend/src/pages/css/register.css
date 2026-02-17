@@ -1,0 +1,181 @@
+.register-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+}
+
+.register-image {
+  flex: 1;
+  background-image: url(../../assets/img1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.register-form-section {
+  flex: 1;
+  /* background-color: #f2e7db; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+}
+
+.register-form-section::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: url("../../assets/bg3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.3; 
+
+  z-index: -1;
+}
+
+.register-form {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.brand {
+  font-size: 48px;
+  color: #650000;
+  margin-bottom: 10px;
+}
+
+.register-form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.register-form input {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.register-form input:focus {
+  outline: none;
+  border: 1px solid #650000;
+}
+
+.register-form button {
+  padding: 16px;
+  background-color: #650000;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: black;
+}
+
+.switch-auth {
+  font-size: 14px;
+}
+
+.switch-auth span {
+  color: #650000;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.success-msg {
+  padding: 14px;
+  border-radius: 12px;
+  background-color: #e6f4ea;
+  color: #1e4620;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.error-msg {
+  padding: 14px;
+  border-radius: 12px;
+  background-color: #fde8e8;
+  color: #650000;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .login-container,
+  .register-container {
+    flex-direction: column;
+  }
+
+  .login-image,
+  .register-image {
+    height: 300px;
+  }
+
+  .login-form-section,
+  .register-form-section {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-form,
+  .register-form {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .brand {
+    font-size: 36px;
+  }
+
+  .login-form h2,
+  .register-form h2 {
+    font-size: 22px;
+  }
+
+  .login-form-section,
+  .register-form-section {
+    padding: 50px 25px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .login-image,
+  .register-image {
+    height: 220px;
+  }
+
+  .login-form-section,
+  .register-form-section {
+    padding: 40px 20px;
+  }
+
+  .brand {
+    font-size: 30px;
+  }
+}
